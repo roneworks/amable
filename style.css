@@ -1,0 +1,2457 @@
+/* リセットCSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "筑紫B丸ゴシック", "筑紫A丸ゴシック", "fot-tsukubrdgothic-std", "fot-tsukuardgothic-std", "ZEN丸ゴシック", "ヒラギノ丸ゴPro", sans-serif;
+    line-height: 1.5;
+    font-style: normal;
+    font-weight: 570;
+    font-size: 87.5%;
+    color: #c86f00;
+    background-color: #f0e8bd;
+    margin: 0 auto;
+    animation: fadeIn 0.6s ease-in-out;    
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ヘッダー */
+header {
+    padding: 15px 30px;
+    position: sticky;
+    background-color: #f0e8bd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    z-index: 1000;
+}
+.header-link {
+    display: flex;
+    gap: 20px;
+}
+.header-link a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.4s ease;
+    row-gap: 2px;
+}
+.header-link:hover > :not(:hover) {
+    opacity: 0.4;
+    transition: all 0.4s ease-in-out;
+}
+.header-link p {
+    font-size: 8px;
+    color: #c86f00;
+}
+
+
+/* トップ */
+.slider-wrapper {
+    position: relative;
+    margin: 0 50px;
+    overflow: hidden;
+    display: flex;
+}
+.slider-wrapper img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 2s ease-in-out; /* フェード時間をここで調整 */
+    z-index: 0;
+    pointer-events: none;
+}
+.slider-wrapper img.active {
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
+    transition-delay: 0.5s;
+}
+@keyframes top-slide {
+    0%, 35%, 100% {
+    opacity: 0;
+  }
+    15%, 30% {
+    opacity: 1;
+  }
+}
+.slide1:nth-of-type(1) {
+    animation-delay: 0s;
+    position: relative;
+}
+.slide2:nth-of-type(2) {
+    animation-delay: 7s;
+}
+.slide3:nth-of-type(3) {
+    animation-delay: 14s;
+}
+
+/* スライダーナビゲーション */
+.slider-dot {
+    position: absolute;
+    margin: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+.dot-1, .dot-2, .dot-3 {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.8s ease;
+}
+
+/* スローガン */
+.slogan {
+    text-align: center;
+    margin: 100px 0 150px;
+}
+.slogan h1 {
+    font-size: 55px;
+    letter-spacing: 15px;
+    color: #c86f00;
+    margin-bottom: 18px;
+}
+.slogan h4 {
+    font-size: 30px;
+    letter-spacing: 8px;
+    color: #878c1a;
+    margin-bottom: 60px;
+}
+.slogan a {
+    display: inline-block;
+    background: url(../images/top/us_2.svg) center / cover no-repeat;
+}
+.slogan img {
+    vertical-align: middle;
+    width: 200px;
+    transition: opacity 0.4s ease;
+}
+.slogan img:nth-of-type(1) {
+    opacity: 1;
+}
+.slogan img:nth-of-type(2) {
+    opacity: 0;
+}
+.slogan:hover img:nth-of-type(1) {
+    opacity: 0;
+}
+.slogan:hover img:nth-of-type(2) {
+    opacity: 1;
+}
+
+/* ニュース */
+.title {
+    font-size: 35px;
+    font-weight: bold;
+    color: #c86f00;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.top-bb {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.top-bb-l, .top-bb-r {
+    margin-top: -20px;
+    width: 90px;
+}
+.top-news { 
+    margin: 0 auto;
+    width: 1100px;    
+}
+.top-news ul {
+    height: 220px;
+    line-height: 30px;
+    margin-top: -45px;
+    background-color: #ebdeac;
+    border: 30px solid #ebdeac;
+    border-radius: 35px;
+    padding: 5px 0;
+    overflow-y: scroll;
+}
+.top-news ul:hover > :not(:hover) {
+    opacity: 0.2;
+}
+.top-news-p {
+    width: 85%;
+    display: flex;
+    margin: 20px auto;
+    list-style-type: none;
+    transition: opacity 0.4s ease;
+    cursor: pointer; 
+    justify-content:center;
+}
+.top-news-p a {
+    display: flex;
+    color: #c86f00;   
+    text-decoration: none;    
+}
+.t-n-date {
+    font-size: 15px;
+    letter-spacing: 2px;    
+    color: #878c1a;
+}
+.t-n-tag {
+    width: 120px;
+    margin: 0 25px;
+    font-size: 15px;
+    text-align: center;
+    background-color: #f0e8bd;
+    border-radius: 12px; 
+    padding: 0 10px;
+}
+.t-n-detail {
+    width:630px;
+    font-size: 17px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.circle-pattern {
+    height: 50px;
+    margin: 120px 0;
+    background-image: url(../images/top/circle-pattern.svg);
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    background-size: auto 100%;
+    animation: scroll-bg 60s linear infinite;
+}
+@keyframes scroll-bg {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1000px 0;
+  }
+}
+
+/* ショップ */
+.shop-item, .price-flex, .to-cart-flex, .item-flex {
+    justify-content: center;
+    display: flex;
+}
+.item-img {
+    width: 350px;
+    filter: drop-shadow(5px 15px 4px #d5c885);
+    z-index: 20;
+}
+.shop-item {
+    margin: 20px 20px;
+}
+.shop-item:hover {
+    transform: scale(1.06);
+    transition: transform 0.4s ease;
+}
+.shop-item-p {
+    margin-left: -30px;
+    width: 380px;
+    text-align: center;
+    background-color: #ebdeac ;
+    border-radius: 30px;
+    padding: 20px 40px;
+}
+.item-name {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 3px dashed #f0e8bd;
+    margin-bottom: 5px;    
+}
+.price-flex {
+    margin-left: 40px;
+}
+.price {
+    font-size: 30px;
+    font-weight: bold;
+}
+.tax {
+    font-size: 13px;
+    padding: 18px 0 0 5px;
+}
+.to-cart-flex {
+    margin: 15px -10px 20px;
+}
+.to-cart {
+    margin-right: 15px;    
+}
+.to-cart, .like {   
+    position: relative;
+    width: auto;
+    height: 50px;
+    cursor: pointer;
+}
+.to-cart img, .like img {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.4s ease;
+}
+.to-cart img:nth-of-type(1), .like img:nth-of-type(1) {
+    opacity: 1;
+    position: relative;
+}
+.to-cart img:nth-of-type(2), .like img:nth-of-type(2) {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.to-cart:hover img:nth-of-type(1), .like:hover img:nth-of-type(1) {
+    opacity: 0;
+}
+.to-cart:hover img:nth-of-type(2), .like:hover img:nth-of-type(2) {
+    opacity: 1;
+}
+.shop-detail {
+    font-size: 13px;    
+    text-align: left;
+    line-height: 25px;
+}
+.shop-caption {
+    margin-top: 15px;
+    color: #878c1a;
+}
+
+/* ご使用方法 */
+.hf-flex, .howto-flex, .top-footer {
+    display: flex;
+}
+.hf-flex {
+    align-items: center;
+    justify-content: center;
+    margin: 80px auto 50px;
+}
+.howto {
+    width: 750px;
+    margin-top: 50px;
+}
+.howto-flex {
+    background-color: #f0e8bd;
+    border-radius: 30px;
+    padding: 20px 30px 0;
+    margin-top: -45px;
+    align-items: center;
+    justify-content: center;
+}
+.howto ol {
+    width: 350px;
+    float: left;
+    font-size: 15px;
+    margin: 30px -5px 15px 30px;
+}
+.howto li {
+    margin-bottom: 15px;
+}
+.howto-point {
+    width: 40px;
+    float: left;
+    margin: -30px 5px 0 -10px;
+}
+.howto-back {
+    width: 310px;
+    height: 60px;
+    display: flex;
+    padding: 7px 0;
+    margin: -10px 0 20px;
+    color: #878c1a;
+    background-color: #ebdeac;
+    border-radius: 15px;
+}
+.howto-image {
+    height: 350px;
+    margin-top: -10px;
+}
+
+/* フッター(トップ) */
+.footer-back {
+    background-image: url(../images/top/top-footer-back.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 700px;
+    margin-top: 100px;
+    padding: 30px 0 0;
+}
+.top-footer-links {
+    border-left: 2px dashed #e5c818;
+    padding-left: 15px;
+    margin-top: 30px;
+}
+.link-group {
+    margin-bottom: 15px;
+}
+.link-group > a {
+    display: block;
+    color: #878c1a;
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.4s ease;
+}
+.sub-link {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: all 1s ease-out;
+    margin-left: 20px;
+}
+.link-group.active .sub-link {
+    max-height: 200px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease-in-out;
+    border-radius: 15px;
+    margin-top: 3px;
+}
+.sub-link a {
+    display: block;
+    color: #878c1a;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px 10px;
+    transition: opacity 0.4s ease;
+    background-color: #f0e8bd;
+}
+.sub-link a:hover, .link-group a:hover {
+    color: #c86f00;    
+}
+.link-group.active > a {
+  color: #c86f00;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+.sub-link:hover > :not(:hover) {
+    opacity: 0.3;
+}
+.top-footer-company {
+    text-align: center;
+    margin: 100px 70px 0 30px;
+}
+.sublogo {
+    width: 170px;
+}
+.top-footer-company p {
+    margin: 15px 0;
+    font-size: 13px;
+}
+.copyright {
+    height: 50px;
+    padding-top: 10px;
+    text-align: center;
+    border-top: 2px solid #e5c818;
+}
+
+/* フッター(その他) */
+footer {
+    background-color: #878c1a;
+    color: #e5c818;
+    text-align: center;
+    padding: 35px 0 15px 0;
+}
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 30px 0;
+}
+.footer-links a {
+    font-size: 13px;
+    text-decoration: none;
+    color: #f0e8bd;
+    transition: opacity 0.4s ease;
+}
+.footer-links:hover > :not(:hover) {
+    opacity: 0.4;
+}
+
+
+
+/********** ニュースページ1 **********/
+.newspage {
+    text-align: center;
+}
+.news-back {
+    background-image: url(../images/news/news-topbubble.svg);
+    background-repeat: no-repeat;
+    width: 1500px;
+    padding: 140px 0;
+    margin: 0 auto;
+    text-align: center;
+}
+.news-p-flex {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 260px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #878c1a;
+}
+.news-contents h1 {
+    line-height: 45px;
+    margin: 60px 0 50px 0;
+}
+.news-contents p {
+    font-size: 18px;
+    line-height: 40px;
+}
+.news-img-flex {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    gap: 50px;
+}
+.to-product, .to-contact {   
+    position: relative;
+    width: auto;
+    height: 50px;
+    cursor: pointer;
+}
+.to-product img, .to-contact img {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.4s ease;
+}
+.to-product img:nth-of-type(1), .to-contact img:nth-of-type(1) {
+    opacity: 1;
+    position: relative;
+}
+.to-product img:nth-of-type(2), .to-contact img:nth-of-type(2) {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.to-product:hover img:nth-of-type(1), .to-contact:hover img:nth-of-type(1) {
+    opacity: 0;
+}
+.to-product:hover img:nth-of-type(2), .to-contact:hover img:nth-of-type(2) {
+    opacity: 1;
+}
+.other-news { 
+    margin: 0 auto 100px;
+    width: 1100px;
+}
+.o-n-bb-l {
+    margin: 0 0 -130px -900px;
+    width: 200px;
+    z-index: 20;
+}
+.other-news h3 {
+    width: 140px;
+    height: 35px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #878c1a;
+    border-bottom: 3px dashed #ebdeac;
+    margin: 0 auto 15px;
+}
+.other-news ul {
+    height: 100px;
+    line-height: 25px;
+    overflow-y: scroll;
+}
+.other-news ul:hover > :not(:hover) {
+    opacity: 0.2;
+}
+.news-p {
+    width: 85%;
+    display: flex;
+    margin: 18px auto;
+    list-style-type: none;
+    transition: opacity 0.4s ease;
+    cursor: pointer; 
+    justify-content:center;
+}
+.news-p a {
+    display: flex;
+    color: #878c1a;   
+    text-decoration: none;    
+}
+.news-date {
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+.news-tag {
+    width: 100px;
+    margin: 0 25px;
+    font-size: 13px;
+    text-align: center;
+    background-color: #ebdeac;
+    border-radius: 10px; 
+    padding: 0 10px;
+}
+.news-detail {
+    width:630px;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+.o-n-bb-r {
+    margin: -80px -900px 0 0;
+    width: 200px;
+    z-index: 20;
+}
+#shop, #contact, #news, #amable, #material, #package, #faq-soap, #faq-online, #login {
+    scroll-margin-top: 90px;
+}
+
+/********** ニュースページ2 **********/
+.news-ex {
+    margin: 50px auto;
+    width: 650px;
+}
+.news-ex p {
+    font-size: 15px;
+    line-height: 28px;
+}
+.news-ex-title {
+    color: #878c1a;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.news-ex-p {
+    margin-top: -12px;
+    background-color: #ebdeac;
+    border-radius: 20px;
+    padding: 15px 30px;  
+}
+
+.news-sample {
+    position: relative;
+    display: inline-block;
+    margin: 20px 0 80px;
+}
+.n-s-photo {
+    position: relative;    
+    display: block;
+    width: 300px;
+    filter: drop-shadow(3px 8px 3px #d5c885);   
+    z-index: 2;
+}
+.n-s-bubble {
+    position: absolute;
+    width: 470px;    
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, 20%);
+}
+.hiiragi {
+    top:30px;
+}
+.increase {
+    width: 250px;
+}
+
+
+
+/********** 私たちについて **********/
+.us-slogan {
+    text-align: center;
+    margin: 200px auto;
+}
+.us-slogan h1 {
+    font-size: 55px;
+    letter-spacing: 15px;
+    color: #c86f00;
+    margin: 23px 0 18px 0;
+}
+.us-slogan h4 {
+    font-size: 30px;
+    letter-spacing: 8px;
+    color: #878c1a;
+    margin-bottom: 45px;
+}
+.us-slogan img {
+    width: 600px;
+}
+.us-line-r {
+    margin-left: 880px;
+}
+.us-line-l {
+    margin-right: 880px;
+}
+.amable {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.amable-p {
+    font-size: 20px;
+}
+.material-photo p {
+    color: #878c1a;
+}
+.amable-p p {
+    margin: 20px 80px 0 0;
+    width: 600px;
+    font-size: 20px;
+    line-height: 35px;
+}
+.soap-slide {
+    position: relative;
+}
+.soap-slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 550px;
+    object-fit: cover;
+    opacity: 0;
+    animation: amable-slide 18s infinite;
+}
+@keyframes amable-slide {
+    0%, 70%, 100% {
+    opacity: 0;
+  }
+    30%, 45% {
+    opacity: 1;
+  }
+}
+.soap1:nth-of-type(1) {
+    animation-delay: 0s;
+    position: relative;
+}
+.soap2:nth-of-type(2) {
+    animation-delay: 9s;
+}
+.us-bubble1 {
+    width: 130px;
+    margin: 380px 0px 0 -70px;
+    z-index: 10;
+}
+
+.material {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 250px auto 250px auto;
+}
+.us-bubble2 {
+    width: 130px;
+    margin: -620px -60px 0 0;
+    z-index: 10;
+}
+.material-photo {
+    text-align: center;
+    margin-right: 80px;
+}
+.material-photo img {
+    width: 180px;
+}
+.material-photo1, .material-photo2 {
+    display: flex;  
+}
+.material-photo1 {
+    margin-bottom: 40px;
+}
+.photo-space {
+    margin: 0 40px 0 40px;
+}
+.material-photo p {
+    margin-top: 3px;
+}
+.material-p {
+    font-size: 20px;
+}
+.material-p p {
+    margin-top: 20px;
+    width: 650px;
+    font-size: 20px;
+    line-height: 35px;
+}
+.material-p small {
+    color: #878c1a;
+}
+
+.package {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-bottom: 180px;
+}
+.package-p {
+    font-size: 20px;
+}
+.package-p p {
+    margin: 20px -20px 0 0;
+    width: 600px;
+    font-size: 20px;
+    line-height: 35px;
+}
+.package-slide {
+    position: relative;
+}
+.package-slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 550px;
+    object-fit: cover;
+    opacity: 0;
+    animation: package-slide 18s infinite;
+}
+@keyframes package-slide {
+    0%, 70%, 100% {
+    opacity: 0;
+  }
+    30%, 45% {
+    opacity: 1;
+  }
+}
+.pake1:nth-of-type(1) {
+    animation-delay: 0s;
+    position: relative;
+}
+.pake2:nth-of-type(2) {
+    animation-delay: 9s;
+}
+.us-bubble3 {
+    width: 130px;
+    margin: -530px 0px 0 -80px;
+    z-index: 10;
+}
+.us-bubble4 {
+    height: 130px;
+    margin: 0 -170px -540px 0;
+    z-index: 10;
+}
+.product-list {
+    text-align: center;
+    margin-bottom: 120px;
+}
+.product-list a {
+    display: inline-block;
+    background: url(../images/us/productlist_2.svg) center / cover no-repeat;
+}
+.product-list img {
+    vertical-align: middle;
+    width: 200px;
+    transition: opacity 0.4s ease;
+}
+.product-list img:nth-of-type(1) {
+    opacity: 1;
+}
+.product-list img:nth-of-type(2) {
+    opacity: 0;
+}
+.product-list:hover img:nth-of-type(1) {
+    opacity: 0;
+}
+.product-list:hover img:nth-of-type(2) {
+    opacity: 1;
+}
+
+
+
+/********** 質問/ご意見 **********/
+.faq, .contact {
+    margin: 60px auto 90px auto;
+    height: 100%;
+}
+.faq-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.faq-title h1 {
+    font-size: 40px;
+}
+.title-bb-l {
+    width: 120px;
+    margin: -10px 30px 0 0;
+}
+.title-bb-r {
+    width: 120px;
+    margin: -10px 0 0 30px;
+}
+.faq-lr {
+    justify-content: center;
+    display: flex;
+}
+.faq-l, .faq-r {
+    max-width: 500px;
+    margin: 0 20px;
+}
+.faq-group {
+    background-color: #ebdeac;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: max-height 0.9s ease-in-out;
+    max-height: 60px; 
+}
+.faq-group.active {
+    max-height: 400px;
+}
+.faq-q {
+    width: 500px;
+    height: 60px;
+    align-items: center;
+    background-color: #ebdeac;
+    border: none;
+    margin: 0 auto;
+    padding: 25px;
+    font-family: "筑紫B丸ゴシック";
+    font-size: 20px;
+    font-weight: bold;
+    color: #878c1a;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.faq-arrow svg {
+    width: 20px;
+    height: 12px;
+    transition: transform 0.4s ease-in-out;
+}
+.faq-group.active .faq-arrow svg, .dropdown.dropdown.active .faq-arrow svg{
+    transform: rotate(180deg);
+}
+.faq-a {
+    vertical-align: center;
+    width: 500px;
+    max-height: 0;
+    opacity: 0;
+    padding: 10px 30px;
+    border-top: 3px solid #f0e8bd;
+    font-size: 17px;
+    transition: all 0.9s ease-in-out;
+}
+.faq-a-p {
+    margin-left: 30px;
+    text-indent: -30px;
+    line-height: 30px;
+}
+.faq-group.active .faq-a {
+    opacity: 1;
+    max-height: 3000px; /* 必要に応じて調整 */
+    margin-bottom: 10px;
+}
+.faq-a-space {
+    margin: 5px 0;
+    width: 500px;
+    padding: 10px 60px 0 30px;
+}
+.faq-a-space a {
+    color: #c86f00;
+}
+.contact {
+    text-align: center;
+}
+.contact-p p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    color: #878c1a;
+}
+.dropdown {
+    position: relative;
+    width: 600px;
+    margin: 35px auto 8px;
+}
+.dropdown-box {
+    max-height: 40px;   
+    background-color: #ebdeac;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: max-height 0.9s ease-in-out, background-color 0.9s ease;
+}
+.dropdown.active .dropdown-box {
+    max-height: 300px;
+    background-color: #ebdeac;
+}
+.dropdown-btn {
+    height: 40px;
+    width: 600px;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-family: "筑紫B丸ゴシック";
+    font-size: 16px;
+    font-weight: bold;
+    color: #c86f00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.dropdown-list {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.dropdown.active .dropdown-list {
+    border-top: 3px solid #f0e8bd;
+    opacity: 1;
+    transform: translateY(0);
+}
+.dropdown-list li {
+    font-size: 16px;
+    padding: 8px;
+    cursor: pointer;
+}
+.dropdown-list:hover > :not(:hover) {
+    opacity: 0.4;
+    background-color: #f0e8bd;
+}
+textarea {
+    width: 600px;
+    height: 300px;
+    background-color: #ebdeac;
+    border-radius: 10px;
+    border: none;
+    margin: 8px auto;
+    padding: 15px;
+    font-family: "筑紫B丸ゴシック";
+    font-size: 16px;
+    font-weight: bold;
+    color: #c86f00;
+}
+textarea::placeholder {
+    font-weight: bold;
+    opacity: 0.6;
+    color: #c86f00;
+}
+textarea:focus {
+    outline: solid 2px #c86f00;
+}
+.submit-button {
+    display: inline-block;
+    background: url(../images/faq/send_2.svg) center / cover no-repeat;
+    margin: 20px 0 40px 0;
+}
+.submit-button img {
+    vertical-align: middle;
+    width: 120px;
+    transition: opacity 0.4s ease;
+}
+.submit-button img:nth-of-type(1) {
+    opacity: 1;
+}
+.submit-button img:nth-of-type(2) {
+    opacity: 0;
+}
+.submit-button:hover img:nth-of-type(1) {
+    opacity: 0;
+}
+.submit-button:hover img:nth-of-type(2) {
+    opacity: 1;
+}
+.contact-details {
+    width: 810px;
+    margin: 0 auto;
+    font-size: 13px;
+    color: #878c1a;
+}
+.c-d-left, .c-d-indent {
+    text-align: left;
+}
+.c-d-indent {
+    text-indent: 13px;
+}
+.c-d-support {
+    margin: 25px 0 15px;
+}
+.support-left, .support-left-close {
+    text-align: left;
+    width: 155px;
+    margin: 0 auto;
+}
+.support-left-close {
+    text-indent: 13px;
+}
+
+
+
+/********** ログイン/会員登録 **********/
+.loginpage {
+    text-align: center;
+    margin: 0 auto;
+}
+.login h1 {
+    font-size: 35px;
+    margin: 60px auto 30px auto;
+}
+.form-input {
+    width: 600px;
+    height: 40px;
+    background-color: #ebdeac;
+    border-radius: 10px;
+    border: none;
+    margin: 8px auto;
+    padding: 15px;
+    font-family: "筑紫B丸ゴシック";
+    font-size: 16px;
+    font-weight: bold;
+    color: #c86f00;
+}
+.form-input::placeholder {
+    font-weight: bold;
+    opacity: 0.6;
+    color: #c86f00;
+}
+.form-input:focus {
+    outline: solid 2px #c86f00;
+}
+.password-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 600px;
+    margin: 0 auto;
+}
+.password-arrow {
+    position: absolute;
+    right: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.eye {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    transition: opacity 0.9s ease;
+}
+.eye.closed {
+    opacity: 0;
+}
+.password-box.active .eye.open {
+    opacity: 0;
+}
+.password-box.active .eye.closed {
+    opacity: 1;
+}
+.login-button {
+    display: inline-block;
+    background: url(../images/login/login_2.svg) center / cover no-repeat;
+    margin-top: 20px;
+}
+.login img {
+    vertical-align: middle;
+    width: 120px;
+    transition: opacity 0.4s ease;
+}
+.login img:nth-of-type(1) {
+    opacity: 1;
+}
+.login img:nth-of-type(2) {
+    opacity: 0;
+}
+.login:hover img:nth-of-type(1) {
+    opacity: 0;
+}
+.login:hover img:nth-of-type(2) {
+    opacity: 1;
+}
+.login-forget {
+    font-size: 14px;
+    margin: 15px auto 60px auto;
+    color: #878c1a;
+}
+.login-forget a {
+    color: #878c1a;
+    transition: opacity 0.4s ease;
+}
+.login-forget a:hover, .cancel:hover {
+    opacity: 0.5;
+}
+.login-line {
+    height: 12px;
+}
+.createaccount h1{
+    font-size: 35px;
+    margin: 50px auto 30px auto;
+}
+.check-privacy, .check-getmail {
+    font-size: 16px;
+}
+.check-privacy {
+    margin: 0 0 5px -50px;
+}
+.check-privacy input, .check-getmail input {
+    width: 16px;
+    height: 16px;
+    margin: 0 3px -3px 0;
+    appearance: none;
+    background-color: #f0e8bd;
+    border: solid 2px #c86f00;
+    border-radius: 5px;
+    &:checked {
+    background-color: #c86f00;
+    background-image: url(../images/login/icon_check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+}
+.checkbox {
+    margin: 25px 0;
+}
+.create-button {
+    display: inline-block;
+    background: url(../images/login/createaccount_2.svg) center / cover no-repeat;
+}
+.check-privacy a {
+    color: #c86f00;
+}
+.createaccount img {
+    vertical-align: middle;
+    width: 160px;
+    transition: opacity 0.5s ease;
+}
+.createaccount img:nth-of-type(1) {
+    opacity: 1;
+}
+.createaccount img:nth-of-type(2) {
+    opacity: 0;
+}
+.createaccount:hover img:nth-of-type(1) {
+    opacity: 0;
+}
+.createaccount:hover img:nth-of-type(2) {
+    opacity: 1;
+}
+.cancel {
+    font-size: 14px;
+    margin: 15px auto 90px auto;
+    transition: opacity 0.4s ease;
+    color: #878c1a;
+}
+.cancel a {
+    color: #878c1a;
+}
+
+/********** リセット **********/
+.resetpage {
+    text-align: center;
+    margin: 0 auto;
+}
+.reset h1 {
+    font-size: 35px;
+    margin: 60px auto 30px auto;
+}
+.reset-p {
+    font-size: 15px;
+    line-height: 25px;
+}
+.reset form {
+    margin-top: 20px;
+}
+.reset-button {
+    display: inline-block;
+    background: url(../images/faq/send_2.svg) center / cover no-repeat;
+    margin-top: 20px;
+}
+.reset img {
+    vertical-align: middle;
+    width: 120px;
+    transition: opacity 0.4s ease;
+}
+.reset img:nth-of-type(1) {
+    opacity: 1;
+}
+.reset img:nth-of-type(2) {
+    opacity: 0;
+}
+.reset:hover img:nth-of-type(1) {
+    opacity: 0;
+}
+.reset:hover img:nth-of-type(2) {
+    opacity: 1;
+}
+
+
+
+/********** カート **********/
+.cart {
+    margin: 18% 0;
+    align-items: center;
+    text-align: center;
+}
+.cart h1 {
+    margin: 30px;
+    letter-spacing: 2px;
+}
+.cart h2 {
+    width: 300px;
+    margin: auto;    
+    padding: 10px;
+    background-color: #ebdeac;
+    border-radius: 15px;
+    font-size: 20px;
+}
+.cart a {
+    color: #c86f00;
+}
+.cart a:hover {
+    transition: opacity 0.4s ease;
+    opacity: 0.4;    
+}
+
+
+
+/********** プライバシーポリシー **********/
+.privacy-policy {
+    width: 900px;
+    margin: 0 auto 110px auto;
+}
+.privacy-policy h1 {
+    font-size: 36px;
+    text-align: center;
+    margin: 80px 0;
+}
+.privacy-policy img {
+    height: 850px;
+}
+.pp-line-l {
+    margin: -30px 30px 0 0;
+}
+.pp-line-r {
+    margin: 860px 0 0 30px;
+}
+.pp-flex {
+    display: flex;
+}
+.privacy {
+    margin-top: -15px;
+    font-size: 16px;
+}
+.personal {
+    margin: 60px 0;
+}
+.privacy h3 {
+    margin: 35px 0 10px 0;
+}
+.privacy li {
+    margin-left: 25px;
+}
+.privacy p {
+    line-height: 26px;
+}
+.pp-p {
+    margin-left: 30px;
+    text-indent: -29px;
+}
+.pp-address {
+    margin-top: 15px;
+}
+
+
+
+
+
+/********** レスポンシブデザイン(medium) **********/
+@media (max-width: 1500px) {
+
+    .slider-dot{
+        gap: 8px;
+    }
+    .dot-1, .dot-2, .dot-3 {
+        width: 9px;
+        height: 9px;
+    }
+    .slogan {
+        margin: 70px auto;
+    }
+    .slogan h1 {
+        font-size: 33px;
+        letter-spacing: 8px;
+        margin-bottom: 10px;
+    }
+    .slogan h4 {
+        font-size: 18px;
+        letter-spacing: 8px;
+        margin-bottom: 40px;
+    }
+    .slogan img, .product-list img {
+        width: 170px;
+    }
+    .product-container img {
+        flex: none;
+        max-width: 100%;
+        width: 300px;
+        margin: 0 auto;
+    }
+    .slide-wrapper > div {
+        min-width: 250px;
+    }
+
+    .title {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    .top-bb {
+        gap: 15px;
+    }
+    .top-bb-l, .top-bb-r {
+        margin-top: -10px;
+        width: 75px;
+    }
+    .top-news { 
+        width: 800px; 
+        margin-top: 100px;  
+    }
+    .top-news ul {
+        height: 180px;
+        line-height: 25px;
+        margin-top: -30px;
+        border: 25px solid #ebdeac;
+        border-radius: 30px;
+        padding: 0;
+    }
+    .top-news-p {
+        width: 85%;
+        margin: 18px auto;
+    }
+    .t-n-date {
+        font-size: 13px;
+        letter-spacing: 1.5px;    
+    }
+    .t-n-tag {
+        width: 100px;
+        margin: 0 20px;
+        font-size: 13px;
+        border-radius: 10px; 
+        padding: 0 8px;
+    }
+    .t-n-detail {
+        width:450px;
+        font-size: 15px;
+    }
+    .circle-pattern {
+        height: 50px;
+        margin: 80px 0;
+    }
+
+    .item-top-space {
+        margin-top: 10px;
+    }
+    .item-img {
+        width: 200px;
+        filter: drop-shadow(3px 8px 4px #d5c885);
+    }
+    .shop-item {
+        margin: 10px;
+    }
+    .shop-item-p {
+        margin-left: -25px;
+        width: 270px;
+        border-radius: 30px;
+        padding: 13px 30px;
+    }
+    .item-name {
+        font-size: 15px;
+        padding-bottom: 3px;
+        border-bottom: 2px dashed #f0e8bd;
+        margin-bottom: 3px;    
+    }
+    .price-flex {
+        margin-left: 25px;
+    }
+    .price {
+        font-size: 20px;
+    }
+    .tax {
+        font-size: 8px;
+        padding: 13px 0 0 3px;
+    }
+    .to-cart-flex {
+        margin: 10px 0;
+    }
+    .to-cart {
+        height: 32px;
+        margin-right: 10px;
+    }
+    .like {
+        height: 32px;
+    }
+    .shop-detail {
+        font-size: 10px;    
+        line-height: 18px;
+    }
+    .shop-caption {
+        margin-top: 8px;
+    }
+
+    .hf-flex {
+        margin: 60px 20px 50px;
+    }
+    .howto {
+        width: 470px;
+        margin-top: 30px;
+    }
+    .howto-flex {
+        border-radius: 30px;
+        padding: 15px 25px 0;
+        margin-top: -30px;
+    }
+    .howto ol {
+        width: 250px;
+        font-size: 10px;
+        margin: 20px -20px 15px 20px;
+    }
+    .howto li {
+        margin-bottom: 10px;
+    }
+    .howto-point {
+        width: 25px;
+        margin: -20px 3px 0 -6px;
+    }
+    .howto-back {
+        width: 205px;
+        height: 40px;
+        padding: 4px 0;
+        margin: -8px 0 13px;
+        border-radius: 10px;
+    }
+    .howto-image {
+        height: 230px;
+        margin-top: -10px;
+    }
+
+    /* フッター(トップページ) */
+    .footer-back {
+        height: 500px;
+        margin-top: 80px;
+    }
+    .top-footer-links {
+        border-left: 1.5px dashed #e5c818;
+        padding-left: 10px;
+        margin-top: 20px;
+    }
+    .link-group {
+        margin-bottom: 10px;
+    }
+    .link-group > a {
+        font-size: 10px;
+    }
+    .sub-link {
+        margin-left: 15px;
+    }
+    .link-group.active .sub-link {
+        border-radius: 10px;
+        margin-top: 3px;
+    }
+    .sub-link a {
+        font-size: 10px;
+        padding: 5px 15px;
+    }
+    .top-footer-company {
+        margin: 80px 60px 0 5px;
+    }
+    .sublogo {
+        width: 140px;
+    }
+    .top-footer-company p {
+        margin: 10px 0;
+        font-size: 10px;
+    }
+    .copyright {
+        height: 30px;
+        font-size: 10px;
+        padding-top: 5px;
+        border-top: 1.5px solid #e5c818;
+    }
+
+
+    /********** レスポンシブデザイン(ニュースページ1) **********/
+    .news-back {
+        width: 930px;
+        padding: 80px 0;
+    }
+    .news-p-flex {
+        margin: 0 150px;
+        font-size: 15px;  
+    }
+    .news-contents h1 {
+        margin: 40px 0 30px 0;
+    }
+    .news-img-flex {
+        margin-top: 60px;
+    }
+    .to-product, .to-contact {   
+        height: 45px;
+    }
+    .other-news { 
+        margin: 10px auto 70px;
+        width: 800px;
+    }
+    .o-n-bb-l {
+        margin: 0 0 -130px -700px;
+        width: 180px;
+    }
+    .news-detail {
+        width: 450px;
+    }
+    .o-n-bb-r {
+        margin: -70px -700px 0 0;
+        width: 180px;
+    }
+
+
+    /********** レスポンシブデザイン(amable) **********/
+    .us-slogan {
+        margin: 100px auto 100px auto;
+    }
+    .us-slogan h1 {
+        font-size: 33px;
+        letter-spacing: 8px;
+        margin: 10px 0 10px 0;
+    }
+    .us-slogan h4 {
+        font-size: 18px;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+    }
+    .us-slogan img {
+        width: 350px;
+    }
+    .us-line-r {
+        margin-left: 530px;
+    }
+    .us-line-l {
+        margin-right: 530px;
+    }
+    .amable-p {
+        font-size: 13px;
+    }
+    .amable-p p {
+        margin: 15px 35px 0 0;
+        width: 450px;
+        font-size: 15px;
+        line-height: 25px;
+    }
+    .soap-slide img {
+        width: 350px;
+    }
+    .us-bubble1 {
+        width: 80px;
+        margin: 240px 0px 0 -45px;
+    }
+    .material {
+        margin: 150px auto 150px auto;
+    }
+    .us-bubble2 {
+        width: 80px;
+        margin: -380px -35px 0 0;
+    }
+    .material-photo {
+        margin-right: 35px;
+    }
+    .material-photo img {
+        width: 110px;
+    }
+    .material-photo1 {
+        margin-bottom: 15px;
+    }
+    .photo-space {
+        margin: 0 20px 0 20px;
+    }
+    .material-photo p {
+        font-size: 10px;
+        margin-top: 0;
+    }
+    .material-p {
+        font-size: 13px;
+    }
+    .material-p p {
+        margin-top: 15px;
+        width: 450px;
+        font-size: 15px;
+        line-height: 25px;
+    }
+    .package {
+        margin-bottom: 110px;
+    }
+    .package-p {
+        font-size: 13px;
+    }
+    .package-p p {
+        margin: 15px -20px 0 0;
+        width: 450px;
+        font-size: 15px;
+        line-height: 25px;
+    }
+    .package-slide img {
+        width: 350px;
+    }
+    .us-bubble3 {
+        width: 80px;
+        margin: -340px 0px 0 -50px;
+    }
+    .us-bubble4 {
+        height: 80px;
+        margin: 0 -110px -340px 0;
+    }
+    .product-list {
+        margin-bottom: 80px;
+    }
+
+
+    /********** レスポンシブデザイン(faq) **********/
+    .faq, .contact {
+        margin: 60px auto;
+    }
+    .faq-title {
+        margin-bottom: 23px;
+    }
+    .faq-title h1 {
+        font-size: 33px;
+    }
+    .title-bb-l {
+        width: 100px;
+        margin: -15px 20px 0 0;
+    }
+    .title-bb-r {
+        width: 100px;
+        margin: -15px 0 0 20px;
+    }
+    .faq-l, .faq-r {
+        max-width: 430px;
+        margin: 0 13px;
+    }
+    .faq-group {
+        border-radius: 18px;
+        margin-bottom: 15px;
+        max-height: 50px; 
+    }
+    .faq-q {
+        width: 430px;
+        height: 50px;
+        padding: 20px;
+        font-size: 17px;
+    }
+    .faq-arrow svg {
+        width: 17px;
+    }
+    .faq-a {
+        width: 430px;
+        padding: 10px 20px;
+        border-top: 2.5px solid #f0e8bd;
+        font-size: 15px;
+    }
+    .faq-a-p {
+        margin-left: 29px;
+        text-indent: -27px;
+        line-height: 27px;
+    }
+    .faq-a-space {
+        width: 430px;
+        padding: 10px 40px 0 30px;
+    }
+    .contact {
+        text-align: center;
+    }
+    .contact-p p {
+        font-size: 15px;
+    }
+    .dropdown {
+        margin: 0 auto 8px;
+    }
+    .dropdown.active .dropdown-list {
+        border-top: 2.5px solid #f0e8bd;
+    }
+    .dropdown-list li {
+        font-size: 16px;
+        padding: 5px;
+    }
+    textarea {
+        height: 180px;
+    }
+
+
+    /********** レスポンシブデザイン(pp) **********/
+    .privacy-policy {
+        width: 830px;
+        margin: 0 auto 80px auto;
+    }
+    .privacy-policy h1 {
+        font-size: 33px;
+        margin: 60px 0;
+    }
+    .privacy-policy img {
+        height: 770px;
+    }
+    .pp-line-l {
+        margin: -28px 23px 0 0;
+    }
+    .pp-line-r {
+        margin: 775px 0 0 23px;
+    }
+    .privacy {
+        margin-top: -10px;
+        font-size: 15px;
+    }
+    .personal {
+        margin: 37px 0;
+    }
+    .privacy h3 {
+        margin: 27px 0 7px 0;
+    }
+    .privacy li {
+        margin-left: 23px;
+    }
+    .privacy p {
+        line-height: 25px;
+    }
+    .pp-p {
+        margin-left: 27px;
+        text-indent: -27px;
+    }
+    .pp-address {
+        margin-top: 13px;
+    }
+    
+    
+    /********** レスポンシブデザイン(cart) **********/
+    .cart {
+        margin: 25% 0;
+    }
+    .cart h1 {
+        font-size: 25px;
+        margin: 20px;
+        letter-spacing: 2px;
+    }
+    .cart h2 {
+        width: 280px;
+        font-size: 18px;
+    }
+}
+
+
+
+
+
+/********** レスポンシブデザイン(small) **********/
+@media (max-width: 930px) {
+
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }  
+    .link {
+        gap: 3rem;
+    }
+    .link p {
+        font-size: 6px;
+    }
+    .slider-wrapper {
+        margin: 0 20px;
+    }    
+    .slider-dot{
+        gap: 4px;
+    }
+    .dot-1, .dot-2, .dot-3 {
+        width: 6px;
+        height: 6px;
+    }
+    .slogan {
+        margin: 35px auto;
+    }
+    .slogan h1 {
+        font-size: 20px;
+        letter-spacing: 5px;
+        margin-bottom: 2px;
+    }
+    .slogan h4 {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-bottom: 23px;
+    }
+    .slogan img, .product-list img {
+        width: 120px;
+    }
+
+    .title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .top-bb {
+        gap: 8px;
+    }
+    .top-bb-l, .top-bb-r {
+        margin-top: -10px;
+        width: 55px;
+    }
+    .top-news { 
+        width: 500px; 
+        margin-top: 60px;  
+    }
+    .top-news ul {
+        height: 110px;
+        line-height: 18px;
+        margin-top: -25px;
+        border: 15px solid #ebdeac;
+        border-radius: 25px;
+    }
+    .top-news-p {
+        margin: 15px auto;
+    }
+    .t-n-date {
+        font-size: 10px;
+        letter-spacing: 1px;    
+    }
+    .t-n-tag {
+        width: 75px;
+        margin: 0 15px;
+        font-size: 10px;
+        border-radius: 8px; 
+        padding: 0 3px;
+    }
+    .t-n-detail {
+        width: 250px;
+        font-size: 12px;
+    }
+    .circle-pattern {
+        height: 25px;
+        margin: 60px 0;
+        animation: scroll-bg 100s linear infinite;
+    }
+
+    .item-top-space {
+        margin-top: -10px;
+    }
+    .item-flex {
+        display: block;
+    }
+    .shop-item {
+        margin: 20px 0;
+    }
+    .shop-item-p {
+        width: 330px;
+    }
+
+    .howto {
+        margin-top: 20px;
+    }
+    .howto-flex {
+        padding: 15px 25px 0;
+        margin-top: -25px;
+    }
+    /* フッター(トップ) */
+    .hf-flex {
+        flex-direction: column-reverse;
+    }
+    .footer-back {
+        height: 750px;
+        margin-top: 60px;
+    }
+    .top-footer-links {
+        margin: -190px 180px 0 0;
+    }
+    .sub-link a {
+    background-color: #ebdeac;
+    }
+    .top-footer-company {
+        margin: 40px 0 0 180px;
+    }
+
+    /* フッター(その他) */
+    footer {
+        padding: 35px 0 10px;
+    }
+    .footer-links {
+        gap: 35px;
+        margin: 25px 0;
+    }
+    .footer-links a {
+        font-size: 12px;
+    }
+    footer p small {
+        font-size: 8px;       
+    }
+
+
+    /********** レスポンシブデザイン(small/ニュースページ1) **********/
+    .news-back {
+        width: 540px;
+        padding: 40px 0;
+    }
+    .news-p-flex {
+        margin: 0 80px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+    .news-contents h1 {
+        font-size: 15px;
+        line-height: 25px;
+        margin: 30px 0 25px 0;
+    }
+    .news-contents p {
+        font-size: 12px;
+        line-height: 25px;
+    }
+    .news-img-flex {
+        margin-top: 30px;
+        gap: 20px;
+    }
+    .to-product, .to-contact {   
+        height: 35px;
+    }
+    .other-news { 
+        margin: 10px auto 30px;
+        width: 450px;
+    }
+    .o-n-bb-l {
+        margin: 0 0 -80px -420px;
+        width: 110px;
+    }
+    .other-news h3 {
+        width: 95px;
+        height: 23px;
+        font-size: 13px;
+        border-bottom: 2px dashed #ebdeac;
+        margin: 0 auto 5px;
+    }
+    .other-news ul {
+        height: 60px;
+        line-height: 15px;
+    }
+    .news-p {
+        width: 85%;
+        margin: 12px auto;
+    }
+    .news-date {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+    .news-tag {
+        width: 60px;
+        margin: 0 12px;
+        font-size: 8px;
+        border-radius: 6px; 
+        padding: 0 3px;
+    }
+    .news-detail {
+        width: 280px;
+        font-size: 10px;
+    }
+    .o-n-bb-r {
+        margin: -35px -420px 0 0;
+        width: 110px;
+    }
+    #shop, #contact, #news, #amable, #material, #package, #faq-soap, #faq-online, #login {
+        scroll-margin-top: 140px;
+    }
+
+    /********** ニュースページ2 **********/
+    .news-ex {
+        margin: 30px auto;
+        width: 500px;
+    }
+    .news-ex p {
+        font-size: 12px;
+        line-height: 23px;
+    }
+    .news-ex-title {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+    .news-ex-p {
+        margin-top: -10px;
+        border-radius: 15px;
+        padding: 10px 10px;  
+    }
+    .news-sample {
+        margin: 10px 0 60px;
+    }
+    .n-s-photo {
+        width: 200px;
+    }
+    .n-s-bubble {
+        width: 320px;
+        top: 3%;
+    }
+    .hiiragi {
+        top: 20px;
+    }
+    .increase {
+        width: 170px;
+    }
+
+
+    /********** レスポンシブデザイン(small/amable) **********/
+    .us-slogan {
+        margin: 50px auto 50px auto;
+    }
+    .us-slogan h1 {
+        font-size: 21px;
+        letter-spacing: 5px;
+        margin: 4px 0 4px 0;
+    }
+    .us-slogan h4 {
+        font-size: 12px;
+        letter-spacing: 2.5px;
+        margin-bottom: 11px;
+    }
+    .us-slogan img {
+        width: 190px;
+    }
+    .us-line-r {
+        margin-left: 300px;
+    }
+    .us-line-l {
+        margin-right: 300px;
+    }
+    .amable-p {
+        font-size: 8px;
+    }
+    .amable-p p {
+        margin: 5px 15px 0 0;
+        width:300px;
+        font-size: 10px;
+        line-height: 17px;
+    }
+    .soap-slide img { 
+        width: 150px;
+    }
+    .us-bubble1 {
+        width: 50px;
+        margin: 0 0 -150px -50px;
+    }
+    .material {
+        margin: 80px auto 80px 20px;
+    }
+    .us-bubble2 {
+        width: 50px;
+        margin: -230px -70px 0 0;
+    }
+    .material-photo {
+        margin-right: 15px;
+    }
+    .material-photo img {
+        width: 60px;
+    }
+    .material-photo1 {
+        margin-bottom: 6px;
+    }
+    .photo-space {
+        margin: 0 5px 0 5px;
+    }
+    .material-photo p {
+        font-size: 6px;
+        margin-top: -3px;
+    }
+    .material-p {
+        font-size: 8px;
+    }
+    .material-p p {
+        margin-top: 5px;
+        width: 280px;
+        font-size: 10px;
+        line-height: 17px;
+    }
+    .package {
+        margin-bottom: 60px;
+    }
+    .package-p {
+        font-size: 8px;
+        margin-left: -130px;
+    }
+    .package-p p {
+        margin: 5px 80px 0 0;
+        width: 300px;
+        font-size: 10px;
+        line-height: 17px;
+    }
+    .package-slide img {
+        width: 150px;
+    }
+    .us-bubble3 {
+        width: 50px;
+        margin: -210px 0px 0 -180px;
+    }
+    .us-bubble4 {
+        height: 50px;
+        margin: 0 -170px -160px 0;
+    }
+    .product-list {
+        margin-bottom: 50px;
+    }
+    .product-list img {
+        width: 140px;
+    }
+
+
+    /********** レスポンシブデザイン(small/faq) **********/
+    .faq, .contact {
+        margin: 50px auto;
+    }
+    .faq-title {
+        margin-bottom: 15px;
+    }
+    .faq-title h1 {
+        font-size: 25px;
+    }
+    .title-bb-l {
+        width: 70px;
+        margin: -10px 12px 0 0;
+    }
+    .title-bb-r {
+        width: 70px;
+        margin: -10px 0 0 12px;
+    }
+    .faq-lr {
+        display: block;
+    }
+    .faq-l, .faq-r {
+        width: 400px;
+        margin: 0 auto;
+    }
+    .faq-group {
+        border-radius: 15px;
+        margin-bottom: 10px;
+        max-height: 40px; 
+    }
+    .faq-q {
+        width: 400px;
+        height: 40px;
+        padding: 15px;
+        font-size: 14px;
+    }
+    .faq-arrow svg {
+        width: 14px;
+    }
+    .faq-a {
+        width: 400px;
+        padding: 10px 20px 0;
+        border-top: 2px solid #f0e8bd;
+        font-size: 14px;
+    }
+    .faq-a-p {
+        margin-left: 20px;
+        text-indent: -25px;
+        line-height: 25px;
+    }
+    .faq-a-space {
+        width: 400px;
+        padding: 10px 25px 0 20px;
+    }
+    .contact-p p {
+        width: 350px;
+        margin: 15px auto;
+        font-size: 12px;
+    }
+    .dropdown {
+        width: 400px;
+        margin: 0 auto 5px;
+    }
+    .dropdown-box {
+        max-height: 35px;   
+        border-radius: 8px;
+    }
+    .dropdown-btn {
+        width: 400px;
+        height: 35px;        
+        padding: 15px;
+        font-size: 14px;
+    }
+    .dropdown.active .dropdown-list {
+        border-top: 2px solid #f0e8bd;
+    }
+    .dropdown-list li {
+        font-size: 14px;
+        padding: 5px;
+    }
+    textarea {
+        width: 400px;
+        height: 150px;
+        border-radius: 8px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    .submit-button {
+        margin: 10px 0 30px 0;
+    }
+    .submit-button img {
+        width: 100px;
+    }
+    .contact-details {
+        width: 500px;
+        margin: 0 auto;
+        font-size: 12px;
+    }
+    .c-d-left {
+        margin-left: 10px;
+        text-indent: -12px;  
+    }
+    .c-d-indent {
+        text-indent: 10px;
+    }
+    .c-d-support {
+        margin: 20px 0 12px;
+    }
+    .support-left, .support-left-close {
+        width: 145px;
+    }
+    .support-left-close {
+        text-indent: 12px;
+    }
+
+
+    /********** レスポンシブデザイン(small/login) **********/
+    .loginpage {
+        height: 830px;
+        align-content: center;
+    }
+    .login h1 {
+        font-size: 28px;
+        margin: 40px auto 15px auto;
+    }
+    .form-input {
+        width: 400px;
+        height: 35px;
+        border-radius: 8px;
+        margin: 5px auto;
+        font-size: 14px;
+    }
+    .password-box {
+        width: 400px;
+    }
+    .password-arrow {
+        right: 23px;
+    }
+    .eye {
+        width: 20px;
+        height: 20px;
+    }
+    .login-button {
+        margin-top: 15px;
+    }
+    .login img {
+        width: 100px;
+    }
+    .login-forget {
+        font-size: 12px;
+        margin: 12px auto 50px auto;
+    }
+    .login-line {
+        height: 7px;
+    }
+    .createaccount h1{
+        font-size: 25px;
+        margin: 50px auto 15px auto;
+    }
+    .check-privacy, .check-getmail {
+        font-size: 14px;
+    }
+    .check-privacy {
+        margin: 0 0 4px -44px;
+    }
+    .check-privacy input, .check-getmail input {
+        width: 14px;
+        height: 14px;
+        margin: 0 0 -2.5px 0;
+        border: solid 1.5px #c86f00;
+    }
+    .checkbox {
+        margin: 15px 0;
+    }
+    .createaccount img {
+        width: 140px;
+    }
+    .cancel {
+        font-size: 12px;
+        margin: 12px auto 50px auto;
+    }
+
+
+    /********** レスポンシブデザイン(small/reset) **********/
+    .reset h1 {
+        font-size: 28px;
+        margin: 40px auto 15px auto;
+    }
+    .reset-p {
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .reset form {
+        margin-top: 15px;
+    }
+    .reset-button {
+        margin-top: 20px;
+    }
+    .reset img {
+        width: 100px;
+    }
+
+
+    /********** レスポンシブデザイン(small/pp) **********/
+    .privacy-policy {
+        width: 495px;
+        margin: 0 auto 50px auto;
+    }
+    .privacy-policy h1 {
+        font-size: 25px;
+        margin: 40px 0;
+    }
+    .privacy-policy img {
+        height: 460px;
+    }
+    .pp-line-l {
+        margin: -20px 3px 0 0;
+    }
+    .pp-line-r {
+        margin: 500px 0 -20px 3px;
+    }
+    .privacy {
+        margin-top: -10px;
+        font-size: 10px;
+    }
+    .personal {
+        margin: 30px 0;
+    }
+    .privacy h3 {
+        margin: 15px 0 3px 0;
+    }
+    .privacy li {
+        margin-left: 15px;
+    }
+    .privacy p {
+        line-height: 15px;
+    }
+    .pp-p {
+        margin-left: 20px;
+        text-indent: -18px;
+    }
+    .pp-address {
+        margin-top: 10px;
+    }
+
+
+    /********** レスポンシブデザイン(small/cart) **********/
+    .cart {
+        margin: 40% 0;
+    }
+    .cart h1 {
+        width: 380px;
+        font-size: 20px;
+        margin: 20px auto;
+        letter-spacing: 0;
+    }
+    .cart h2 {
+        width: 230px;
+        font-size: 15px;
+    }
+}
