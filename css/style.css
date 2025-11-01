@@ -7,9 +7,8 @@
 
 
 body {
-    font-family: "Kiwi Maru", "Zen Maru Gothic", sans-serif;
+    font-family: "筑紫B丸ゴシック", sans-serif;
     font-style: normal;
-    font-weight: 400;
     line-height: 1.5;
     font-size: 87.5%;
     color: #c86f00;
@@ -158,7 +157,6 @@ header {
 /* ニュース */
 .title {
     font-size: 35px;
-    font-weight: bold;
     color: #c86f00;
     margin-bottom: 20px;
     text-align: center;
@@ -270,7 +268,6 @@ header {
 }
 .item-name {
     font-size: 20px;
-    font-weight: bold;
     padding-bottom: 5px;
     border-bottom: 3px dashed #f0e8bd;
     margin-bottom: 5px;    
@@ -280,7 +277,6 @@ header {
 }
 .price {
     font-size: 30px;
-    font-weight: bold;
     letter-spacing: 1px;
 }
 .tax {
@@ -557,7 +553,6 @@ footer {
     width: 140px;
     height: 35px;
     font-size: 20px;
-    font-weight: bold;
     color: #878c1a;
     border-bottom: 3px dashed #ebdeac;
     margin: 0 auto 15px;
@@ -625,7 +620,6 @@ footer {
 }
 .news-ex-title {
     color: #878c1a;
-    font-weight: bold;
     margin-top: 20px;
 }
 .news-ex-p {
@@ -912,7 +906,6 @@ footer {
     padding: 25px;
     font-family: "Kiwi Maru", "Zen Maru Gothic", sans-serif;
     font-size: 20px;
-    font-weight: bold;
     color: #878c1a;
     text-align: left;
     display: flex;
@@ -988,7 +981,6 @@ footer {
     padding: 15px;
     font-family: "Kiwi Maru", "Zen Maru Gothic", sans-serif;
     font-size: 16px;
-    font-weight: bold;
     color: #c86f00;
     display: flex;
     justify-content: space-between;
@@ -1024,11 +1016,9 @@ textarea {
     padding: 15px;
     font-family: "Kiwi Maru", "Zen Maru Gothic", sans-serif;
     font-size: 16px;
-    font-weight: bold;
     color: #c86f00;
 }
 textarea::placeholder {
-    font-weight: bold;
     opacity: 0.6;
     color: #c86f00;
 }
@@ -1102,11 +1092,9 @@ textarea:focus {
     padding: 15px;
     font-family: "Kiwi Maru", "Zen Maru Gothic", sans-serif;
     font-size: 16px;
-    font-weight: bold;
     color: #c86f00;
 }
 .form-input::placeholder {
-    font-weight: bold;
     opacity: 0.6;
     color: #c86f00;
 }
